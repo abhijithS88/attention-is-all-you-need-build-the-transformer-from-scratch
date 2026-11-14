@@ -28,8 +28,16 @@ def build_id_to_token_vocab(token_to_id):
         id_to_token[token_to_id[x]] = x
     return id_to_token
 
-# Step 3 - encode_sentence_to_ids (not yet solved)
-# TODO: implement
+# Step 3 - encode_sentence_to_ids
+def encode_sentence_to_ids(sentence, token_to_id, unk_token='<unk>'):
+    encoded_sentence = []
+    sentence = list(sentence.split())
+    for x in sentence:
+        if x in token_to_id:
+            encoded_sentence.append(token_to_id[x])
+        else:
+            encoded_sentence.append(token_to_id[unk_token])
+    return encoded_sentence
 
 # Step 4 - decode_ids_to_tokens (not yet solved)
 # TODO: implement

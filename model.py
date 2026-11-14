@@ -21,8 +21,12 @@ def build_token_to_id_vocab(sentences, specials=('<pad>', '<bos>', '<eos>', '<un
                 cnt += 1
     return token_map
 
-# Step 2 - build_id_to_token_vocab (not yet solved)
-# TODO: implement
+# Step 2 - build_id_to_token_vocab
+def build_id_to_token_vocab(token_to_id):
+    id_to_token = {}
+    for x in token_to_id:
+        id_to_token[token_to_id[x]] = x
+    return id_to_token
 
 # Step 3 - encode_sentence_to_ids (not yet solved)
 # TODO: implement
